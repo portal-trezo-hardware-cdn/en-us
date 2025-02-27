@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-gray-800 font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-primary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .section {
+    @apply py-16 px-4 md:px-8 max-w-7xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+}
+
+.slick-dots li button:before {
+  @apply text-primary;
+}
+
+.slick-dots li.slick-active button:before {
+  @apply text-primary-dark;
+}
+
+.crypto-ticker {
+  @apply overflow-hidden whitespace-nowrap;
+}
+
+.crypto-ticker-content {
+  @apply inline-block animate-[marquee_30s_linear_infinite];
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.glass-effect {
+  @apply bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg;
+}
+
+.animated-border {
+  position: relative;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: theme('colors.primary.DEFAULT');
+  transition: width 0.3s ease-in-out;
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
+
+.futuristic-glow {
+  box-shadow: 0 0 15px rgba(0, 100, 0, 0.3);
+}
